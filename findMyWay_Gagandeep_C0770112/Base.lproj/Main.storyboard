@@ -35,22 +35,53 @@
                                     <action selector="navigateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc3-AV-02l"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wu4-8W-Eaq">
+                                <rect key="frame" x="215" y="64" width="179" height="32"/>
+                                <segments>
+                                    <segment title="Automobile"/>
+                                    <segment title="Walking"/>
+                                </segments>
+                                <connections>
+                                    <action selector="transportTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wm9-Yx-nXt"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-4l-SgN">
+                                <rect key="frame" x="376" y="770" width="18" height="22"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="zomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="onB-we-jK4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDT-oi-hFb">
+                                <rect key="frame" x="338" y="770" width="18" height="22"/>
+                                <state key="normal" image="minus" catalog="system"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SM-bp-LYD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L0P-4l-SgN" secondAttribute="trailing" constant="20" id="5oU-Vz-07t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v7c-8R-fB9" secondAttribute="trailing" constant="20" id="Eec-W8-KiS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wum-PN-9da" secondAttribute="trailing" id="Kgn-d0-6ma"/>
                             <constraint firstItem="wum-PN-9da" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q3e-Fn-P1e"/>
+                            <constraint firstItem="v7c-8R-fB9" firstAttribute="top" secondItem="dDT-oi-hFb" secondAttribute="bottom" constant="20" id="U6a-Pw-T0s"/>
+                            <constraint firstItem="L0P-4l-SgN" firstAttribute="leading" secondItem="dDT-oi-hFb" secondAttribute="trailing" constant="20" id="XJL-AB-V3g"/>
                             <constraint firstItem="wum-PN-9da" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yby-Qn-3eE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v7c-8R-fB9" secondAttribute="bottom" constant="20" id="dN2-EX-G1D"/>
+                            <constraint firstItem="Wu4-8W-Eaq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="ejv-UN-b3N"/>
                             <constraint firstItem="JjW-HK-nkO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="k9e-dx-zUK"/>
+                            <constraint firstItem="Wu4-8W-Eaq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="o2O-9U-efd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JjW-HK-nkO" secondAttribute="bottom" constant="20" id="tAG-e2-dxG"/>
+                            <constraint firstItem="v7c-8R-fB9" firstAttribute="top" secondItem="L0P-4l-SgN" secondAttribute="bottom" constant="20" id="uug-1x-1Nw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wum-PN-9da" secondAttribute="bottom" id="zUD-pd-IIG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mMap" destination="wum-PN-9da" id="0kR-AQ-sYj"/>
+                        <outlet property="mSegmentedControl" destination="Wu4-8W-Eaq" id="OPd-oa-84v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,4 +89,8 @@
             <point key="canvasLocation" x="139" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
