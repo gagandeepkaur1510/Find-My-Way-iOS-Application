@@ -15,12 +15,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wum-PN-9da">
-                                <rect key="frame" x="87" y="398" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wum-PN-9da">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZBq-dq-u2S"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-8R-fB9">
+                                <rect key="frame" x="306" y="812" width="88" height="30"/>
+                                <state key="normal" title="Find My Way"/>
+                                <connections>
+                                    <action selector="findMyWayClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nV2-zj-f1N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-HK-nkO">
+                                <rect key="frame" x="20" y="812" width="61" height="30"/>
+                                <state key="normal" title="Navigate"/>
+                                <connections>
+                                    <action selector="navigateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc3-AV-02l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v7c-8R-fB9" secondAttribute="trailing" constant="20" id="Eec-W8-KiS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wum-PN-9da" secondAttribute="trailing" id="Kgn-d0-6ma"/>
+                            <constraint firstItem="wum-PN-9da" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q3e-Fn-P1e"/>
+                            <constraint firstItem="wum-PN-9da" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yby-Qn-3eE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v7c-8R-fB9" secondAttribute="bottom" constant="20" id="dN2-EX-G1D"/>
+                            <constraint firstItem="JjW-HK-nkO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="k9e-dx-zUK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JjW-HK-nkO" secondAttribute="bottom" constant="20" id="tAG-e2-dxG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wum-PN-9da" secondAttribute="bottom" id="zUD-pd-IIG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
